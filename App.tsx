@@ -1,18 +1,21 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import RNBootSplash from 'react-native-bootsplash';
+import {AppNavigator} from './src/navigation';
+import {AppContext} from './src/Context';
+// import {OnboardingScreens} from 'screens';
+
 const App = () => {
   return (
     <NavigationContainer
       onReady={() => {
         RNBootSplash.hide({fade: true});
       }}>
-      <Text>App</Text>
+      <AppContext>
+        <AppNavigator />
+      </AppContext>
     </NavigationContainer>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({});
